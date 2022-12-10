@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ComboBox from "../../ui/components/form/select/ComboBox";
+import ComboBox from "ui/components/form/select/ComboBox";
 
 export default function Review() {
   const restaurant: { name: String }[] = [
