@@ -16,7 +16,9 @@ const people: Array<Person> = [
   { id: 6, name: "Hellen Schmidt" },
 ];
 
-export default function ComboBox() {
+export default function ComboBoxInput() {
+  const { Input, Button, Option, Options } = Combobox;
+
   const [selected, setSelected] = useState<Person>(people[0]);
   const [query, setQuery] = useState("");
 
@@ -31,21 +33,21 @@ export default function ComboBox() {
         );
 
   return (
-    <div className="fixed top-16 w-72">
+    <>
       <Combobox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
-          <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
-            <Combobox.Input
-              className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
+          <div className="relative w-full cursor-default">
+            <Input
+              className="w-full px-10 py-5 rounded-full text-sm leading-5 border bg-transparent text-gray-900 focus:ring-0 focus:outline-none"
               displayValue={() => selected.name}
               onChange={(event) => setQuery(event.target.value)}
             />
-            <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+            <Button className="absolute inset-y-0 right-2 flex items-center pr-2">
               <ChevronUpDownIcon
                 className="h-5 w-5 text-gray-400"
                 aria-hidden="true"
               />
-            </Combobox.Button>
+            </Button>
           </div>
           <Transition
             as={Fragment}
@@ -54,7 +56,7 @@ export default function ComboBox() {
             leaveTo="opacity-0"
             afterLeave={() => setQuery("")}
           >
-            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
               {filteredPeople.length === 0 && query !== "" ? (
                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                   Nothing found.
@@ -93,10 +95,10 @@ export default function ComboBox() {
                   </Combobox.Option>
                 ))
               )}
-            </Combobox.Options>
+            </Options>
           </Transition>
         </div>
       </Combobox>
-    </div>
+    </>
   );
 }

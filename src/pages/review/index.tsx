@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ComboBox from "ui/components/form/select/ComboBox";
+import ComboBoxInput from "ui/components/form/select/ComboBox";
 
 export default function Review() {
   const restaurant: { name: String }[] = [
@@ -22,7 +22,7 @@ export default function Review() {
         id=""
         placeholder="-----------โรงอาหาร-----------"
       />
-      <ComboBox />
+      <ComboBoxInput />
       <input
         className="px-10 py-5 border mt-5 rounded-full text text-xl"
         type="text"

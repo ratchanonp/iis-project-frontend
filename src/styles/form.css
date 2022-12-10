@@ -1,0 +1,7 @@
+.form-input {
+    @apply py-5 px-4 border rounded-full text-center focus:outline-primary
+}
+
+button.btn-primary {
+    @apply bg-primary text-white rounded-full uppercase py-5 text-xl
+}
