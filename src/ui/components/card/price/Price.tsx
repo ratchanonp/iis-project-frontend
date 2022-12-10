@@ -1,4 +1,4 @@
-import { StarIcon } from "@heroicons/react/20/solid";
+import { CurrencyDollarIcon } from "@heroicons/react/20/solid";
 import { PriceRange } from "@utils/interfaces/Restaurant";
 
 interface Props {
@@ -6,8 +6,10 @@ interface Props {
 }
 
 const Price = (props: Props) => {
-  const { price } = props;
-  const { min} = price
+  const {price} = props;
+  const {min} = price;
+  const {max} = price;
+  
 
   const backgroundColor = (price: number) => {
     if (price >= 100) {
@@ -22,11 +24,11 @@ const Price = (props: Props) => {
   return (
     <div
       className={`${backgroundColor(
-        price
+        min
       )} rounded-full inline-flex px-1 text-white text-xs items-center`}
     >
-      <StarIcon className="text-white w-3 h-3 mr-0.5" />
-      {price.toFixed(0)}
+      <CurrencyDollarIcon className="text-white w-3 h-3 mr-0.5" />
+      {min.toFixed()+ "-" + max.toFixed()}
     </div>
   );
 };

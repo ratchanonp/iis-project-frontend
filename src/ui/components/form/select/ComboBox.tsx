@@ -38,7 +38,7 @@ export default function ComboBoxInput() {
         <div className="relative mt-1">
           <div className="relative w-full cursor-default">
             <Input
-              className="w-full px-10 py-5 rounded-full text-sm leading-5 border bg-transparent text-gray-900 focus:ring-0 focus:outline-none"
+              className="w-full px-10 py-5 rounded-lg text-sm leading-5 border bg-transparent text-gray-900 focus:ring-0 focus:outline-none"
               displayValue={() => selected.name}
               onChange={(event) => setQuery(event.target.value)}
             />
