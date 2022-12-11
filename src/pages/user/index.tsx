@@ -1,8 +1,5 @@
 import React, { ReactElement } from "react";
-import {
-  ChevronLeftIcon,
-  BuildingLibraryIcon,
-} from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, BuildingLibraryIcon} from "@heroicons/react/24/outline";
 import { UserCircleIcon, PencilIcon } from "@heroicons/react/24/solid";
 import { NextPageWithLayout } from "pages/_app";
 import Container from "@ui/layouts/Container";
@@ -27,8 +24,12 @@ const UserPage: NextPageWithLayout = (props: Props) => {
         </div>
       </div>
       <p className="font-Kanit text-bold text-3xl ml-5 mt-6">รีวิว</p>
-      
-      <div className="flex flex-col space-y-2 ">{[...Array(3)].map((_, idx) => <ReviewCard key={idx} />)}</div>
+
+      <div className="flex flex-col space-y-2 overflow-y-scroll">
+        {[...Array(10)].map((_, idx) => (
+          <ReviewCard key={idx} />
+        ))}
+      </div>
     </>
   );
 };
