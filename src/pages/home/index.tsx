@@ -4,74 +4,12 @@ import RestaurantCard from "@ui/components/card/Restaurant";
 import Greeting from "@ui/components/home/Greeting";
 import Container from "@ui/layouts/Container";
 import MainLayout from "@ui/layouts/MainLayout";
+import { restaurants } from "@utils/constant/data";
 import { Restaurant } from "@utils/interfaces/Restaurant";
 import { NextPageWithLayout } from "pages/_app";
 
 const HomePage: NextPageWithLayout = () => {
   const firstname = "อาตา";
-
-  const restaurants: Array<Restaurant> = [
-    {
-      title: "ไก่ทอดวิดวะ",
-      category: ["ของทอด", "อาหารอีสาน", "ยำ"],
-      rating: 5.0,
-      imageUrl: "/onechu.jpg",
-      price: {
-        min: 40,
-        max: 100,
-      },
-    },
-    {
-      title: "ไก่ทอดวิดวะ",
-      category: ["ของทอด", "อาหารอีสาน", "ยำ"],
-      rating: 5.0,
-      imageUrl: "/onechu.jpg",
-      price: {
-        min: 40,
-        max: 100,
-      },
-    },
-    {
-      title: "ไก่ทอดวิดวะ",
-      category: ["ของทอด", "อาหารอีสาน", "ยำ"],
-      rating: 5.0,
-      imageUrl: "/onechu.jpg",
-      price: {
-        min: 40,
-        max: 100,
-      },
-    },
-    {
-      title: "ไก่ทอดวิดวะ",
-      category: ["ของทอด", "อาหารอีสาน", "ยำ"],
-      rating: 5.0,
-      imageUrl: "/onechu.jpg",
-      price: {
-        min: 40,
-        max: 100,
-      },
-    },
-    {
-      title: "ไก่ทอดวิดวะ",
-      category: ["ของทอด", "อาหารอีสาน", "ยำ"],
-      rating: 5.0,
-      imageUrl: "/onechu.jpg",
-      price: {
-        min: 40,
-        max: 100,
-      },
-    },
-    {
-      title: "ไก่ทอดวิดวะ",
-      category: ["ของทอด", "อาหารอีสาน", "ยำ"],
-      rating: 5.0,
-      imageUrl: "/onechu.jpg",
-      price: {
-        min: 40,
-        max: 100,
-      },
-    },
-  ];
 
   return (
     <>

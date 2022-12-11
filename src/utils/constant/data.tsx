@@ -1,3 +1,5 @@
+import { Restaurant } from "@utils/interfaces/Restaurant";
+
 const faculty: string[] = [
   "คณะวิศวกรรมศาสตร์",
   "คณะอักษรศาสตร์",
@@ -21,4 +23,67 @@ const faculty: string[] = [
   "สถาบันนวัตกรรมบูรณาการแห่งจุฬาฯ",
 ];
 
-export { faculty };
+const restaurants: Array<Restaurant> = [
+  {
+    title: "ไก่ทอดวิดวะ",
+    category: ["ของทอด", "อาหารอีสาน", "ยำ"],
+    rating: 5.0,
+    imageUrl: "/onechu.jpg",
+    price: {
+      min: 40,
+      max: 100,
+    },
+  },
+  {
+    title: "ไก่ทอดวิดวะ",
+    category: ["ของทอด", "อาหารอีสาน", "ยำ"],
+    rating: 5.0,
+    imageUrl: "/onechu.jpg",
+    price: {
+      min: 40,
+      max: 100,
+    },
+  },
+  {
+    title: "ไก่ทอดวิดวะ",
+    category: ["ของทอด", "อาหารอีสาน", "ยำ"],
+    rating: 5.0,
+    imageUrl: "/onechu.jpg",
+    price: {
+      min: 40,
+      max: 100,
+    },
+  },
+  {
+    title: "ไก่ทอดวิดวะ",
+    category: ["ของทอด", "อาหารอีสาน", "ยำ"],
+    rating: 5.0,
+    imageUrl: "/onechu.jpg",
+    price: {
+      min: 40,
+      max: 100,
+    },
+  },
+  {
+    title: "ไก่ทอดวิดวะ",
+    category: ["ของทอด", "อาหารอีสาน", "ยำ"],
+    rating: 5.0,
+    imageUrl: "/onechu.jpg",
+    price: {
+      min: 40,
+      max: 100,
+    },
+  },
+  {
+    title: "ไก่ทอดวิดวะ",
+    category: ["ของทอด", "อาหารอีสาน", "ยำ"],
+    rating: 5.0,
+    imageUrl: "/onechu.jpg",
+    price: {
+      min: 40,
+      max: 100,
+    },
+  },
+];
+
+export { faculty, restaurants };

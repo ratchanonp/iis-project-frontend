@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head />
       <body className="h-screen w-screen flex justify-center">
-        <div className="h-[932px] w-[430px] border-2">
+        <div className="h-[932px] w-[430px] overflow-scroll border-2">
           <Main />
           <NextScript />
         </div>

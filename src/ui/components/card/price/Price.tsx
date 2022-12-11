@@ -6,10 +6,9 @@ interface Props {
 }
 
 const Price = (props: Props) => {
-  const {price} = props;
-  const {min} = price;
-  const {max} = price;
-  
+  const { price } = props;
+  const { min } = price;
+  const { max } = price;
 
   const backgroundColor = (price: number) => {
     if (price >= 100) {
@@ -28,7 +27,7 @@ const Price = (props: Props) => {
       )} rounded-full inline-flex px-1 text-white text-xs items-center`}
     >
       <CurrencyDollarIcon className="text-white w-3 h-3 mr-0.5" />
-      {min.toFixed()+ "-" + max.toFixed()}
+      {min.toFixed() + "-" + max.toFixed()}
     </div>
   );
 };

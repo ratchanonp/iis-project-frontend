@@ -15,7 +15,7 @@ export default function Navbar() {
             Random
           </li>
         </ul>
-        <div className="absolute -top-10 right-1/2 transform translate-x-1/2 bg-white border-4 border-primary rounded-full p-4">
+        <div className="absolute -top-10 right-1/2 transform translate-x-1/2 bg-white border-4 border-primary rounded-full p-4 shadow">
           <PencilIcon className="w-10 h-10 text-primary" />
         </div>
       </nav>
