@@ -4,7 +4,7 @@ const OpenInfo = (props: Props) => {
   const isOpen = true;
 
   return (
-    <div>
+    <div className="flex items-center justify-center">
       <span
         className={`${
           isOpen ? "text-green-500" : "text-red-500"
