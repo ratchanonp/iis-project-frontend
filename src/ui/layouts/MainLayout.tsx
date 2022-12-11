@@ -1,17 +1,18 @@
-import Navbar from "@ui/components/navbar/Navbar";
+import { Navbar } from "@ui/components/navbar";
+import React from "react";
 
 interface Props {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const MainLayout = (props: Props) => {
-  const { children } = props;
-  return (
-    <div className="relative">
-      {children}
-      <Navbar />
-    </div>
-  );
+	const { children } = props;
+	return (
+		<div className="relative">
+			{children}
+			<Navbar />
+		</div>
+	);
 };
 
 export default MainLayout;

@@ -1,12 +1,12 @@
 import React from "react";
 
 interface Props {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const Container = (props: Props) => {
-  const { children } = props;
-  return <div className="flex flex-col m-5">{children}</div>;
+	const { children } = props;
+	return <div className="flex flex-col m-5">{children}</div>;
 };
 
 export default Container;
