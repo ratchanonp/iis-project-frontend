@@ -7,7 +7,7 @@ interface Props {
 const MainLayout = (props: Props) => {
 	const { children } = props;
 	return (
-		<div className="relative">
+		<div>
 			{children}
 			<Navbar />
 		</div>
