@@ -1,6 +1,5 @@
 import { Restaurant } from "@utils/interfaces/Restaurant";
 import Image from "next/image";
-import Price from "./price/Price";
 import Rating from "./rating/Rating";
 
 interface Props {
@@ -12,8 +11,10 @@ const RestaurantCard = (props: Props) => {
   const { title, category, imageUrl } = props.restaurant;
 
   return (
-    <div className="shadow-md rounded-xl font-Kanit w-40 ">
-      <Image src={imageUrl} alt="title" width={95} height={95} />
+    <div className="shadow-md shrink-0 rounded-xl font-Kanit w-40 overflow-hidden">
+      <div className="w-full h-32 relative">
+        <Image src={imageUrl} alt={title} fill={true} />
+      </div>
       <div className="p-4">
         <h1>{title}</h1>
         <div className="flex space-x-5">
