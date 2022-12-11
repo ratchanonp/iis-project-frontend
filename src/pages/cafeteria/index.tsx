@@ -3,7 +3,7 @@ import { CafeteriaCard } from "@ui/components/card";
 import { Filter } from "@ui/components/search";
 import { BackLayout, Container } from "@ui/layouts";
 import { NextPageWithLayout } from "pages/_app";
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 
 
 const CafeteriaPage: NextPageWithLayout = () => {

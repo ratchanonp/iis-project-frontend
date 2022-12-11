@@ -1,4 +1,3 @@
-import React from "react";
 
 const Filter = () => {
 	const filterList = ["อาหารจานหลัก", "เครื่องดื่ม", "ของหวาน"];

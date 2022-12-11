@@ -1,5 +1,4 @@
 import { MapPinIcon } from "@heroicons/react/20/solid";
-import React from "react";
 import { OpenInfo, RatingInfo } from ".";
 
 // interface Props {

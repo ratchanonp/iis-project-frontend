@@ -2,7 +2,6 @@ import { Container } from "@ui/layouts";
 import { restaurants } from "@utils/constant/data";
 import Image from "next/image";
 import { NextPageWithLayout } from "pages/_app";
-import React from "react";
 
 
 const RestaurantInfo: NextPageWithLayout = () => {

@@ -1,11 +1,9 @@
-import { UserCircleIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
+import { ChevronRightIcon, UserCircleIcon } from "@heroicons/react/20/solid";
 import { CafeteriaCard, RestaurantCard } from "@ui/components/card";
 import { Greeting } from "@ui/components/home";
-import { MainLayout, Container } from "@ui/layouts";
+import { Container, MainLayout } from "@ui/layouts";
 import { restaurants } from "@utils/constant/data";
 import { NextPageWithLayout } from "pages/_app";
-import React from "react";
-
 
 const HomePage: NextPageWithLayout = () => {
 	const firstname = "อาตา";

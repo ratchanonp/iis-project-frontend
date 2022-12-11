@@ -1,5 +1,4 @@
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
-import React from "react";
 
 interface Props {
 	children: React.ReactNode;

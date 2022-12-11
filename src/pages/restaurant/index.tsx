@@ -4,7 +4,7 @@ import { Filter } from "@ui/components/search";
 import { BackLayout, Container } from "@ui/layouts";
 import { restaurants } from "@utils/constant/data";
 import { NextPageWithLayout } from "pages/_app";
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 
 
 const RestaurantList: NextPageWithLayout = () => {

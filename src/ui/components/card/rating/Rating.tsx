@@ -1,5 +1,4 @@
 import { StarIcon } from "@heroicons/react/20/solid";
-import React from "react";
 
 interface Props {
 	score: number;

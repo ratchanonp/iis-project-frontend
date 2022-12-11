@@ -1,4 +1,3 @@
-import React from "react";
 
 const OpenInfo = () => {
 	const isOpen = true;

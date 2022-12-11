@@ -1,5 +1,4 @@
 import { faculty } from "@utils/constant/data";
-import React from "react";
 
 export default function RegisterPage() {
 	return (

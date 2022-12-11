@@ -1,5 +1,4 @@
 import { Navbar } from "@ui/components/navbar";
-import React from "react";
 
 interface Props {
 	children: React.ReactNode;

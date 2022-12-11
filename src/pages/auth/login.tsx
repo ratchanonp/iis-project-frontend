@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function LoginPage() {
 	return (
 		<div className="flex flex-col p-5 font-Poxppins">

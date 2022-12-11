@@ -1,6 +1,5 @@
 import { CurrencyDollarIcon } from "@heroicons/react/20/solid";
 import { PriceRange } from "@utils/interfaces";
-import React from "react";
 
 interface Props {
 	price: PriceRange;
