@@ -33,4 +33,5 @@ const Price = (props: Props) => {
 	);
 };
 
-export default Price;
+export { Price };
+

@@ -18,4 +18,5 @@ const RatingInfo = (props: Props) => {
 	);
 };
 
-export default RatingInfo;
+export { RatingInfo };
+

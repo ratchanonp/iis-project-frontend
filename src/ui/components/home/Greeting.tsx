@@ -18,4 +18,5 @@ const Greeting = (props: Props) => {
 	);
 };
 
-export default Greeting;
+export { Greeting };
+

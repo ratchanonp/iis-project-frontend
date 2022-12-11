@@ -18,4 +18,5 @@ const CafeteriaCard = (props: Props) => {
 	);
 };
 
-export default CafeteriaCard;
+export { CafeteriaCard };
+

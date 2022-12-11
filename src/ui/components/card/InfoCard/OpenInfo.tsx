@@ -16,4 +16,5 @@ const OpenInfo = () => {
 	);
 };
 
-export default OpenInfo;
+export { OpenInfo };
+

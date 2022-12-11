@@ -1,11 +1,11 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import RestaurantHCard from "@ui/components/card/RestaurantH";
-import Filter from "@ui/components/search/Filter";
-import BackLayout from "@ui/layouts/BackLayout";
-import Container from "@ui/layouts/Container";
+import { RestaurantHCard } from "@ui/components/card";
+import { Filter } from "@ui/components/search";
+import { BackLayout, Container } from "@ui/layouts";
 import { restaurants } from "@utils/constant/data";
 import { NextPageWithLayout } from "pages/_app";
 import React, { ReactElement } from "react";
+
 
 const RestaurantList: NextPageWithLayout = () => {
 	return (

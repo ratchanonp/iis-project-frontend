@@ -30,4 +30,5 @@ const Rating = (props: Props) => {
 	);
 };
 
-export default Rating;
+export { Rating };
+

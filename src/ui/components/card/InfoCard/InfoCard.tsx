@@ -1,7 +1,6 @@
 import { MapPinIcon } from "@heroicons/react/20/solid";
 import React from "react";
-import OpenInfo from "./OpenInfo";
-import RatingInfo from "./RatingInfo";
+import { OpenInfo, RatingInfo } from ".";
 
 // interface Props {
 //   //   openPeriod: Period;
@@ -24,4 +23,5 @@ const InfoCard = () => {
 	);
 };
 
-export default InfoCard;
+export { InfoCard };
+

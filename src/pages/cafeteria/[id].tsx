@@ -1,10 +1,7 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import InfoCard from "@ui/components/card/InfoCard/InfoCard";
-import RestaurantCard from "@ui/components/card/Restaurant";
-import RestaurantHCard from "@ui/components/card/RestaurantH";
-import Filter from "@ui/components/search/Filter";
-import BackLayout from "@ui/layouts/BackLayout";
-import Container from "@ui/layouts/Container";
+import { InfoCard, RestaurantCard, RestaurantHCard } from "@ui/components/card";
+import { Filter } from "@ui/components/search";
+import { BackLayout, Container } from "@ui/layouts";
 import { restaurants } from "@utils/constant/data";
 import { NextPageWithLayout } from "pages/_app";
 import React, { ReactElement } from "react";

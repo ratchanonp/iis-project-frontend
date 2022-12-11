@@ -1,12 +1,11 @@
-import { ChevronRightIcon, UserCircleIcon } from "@heroicons/react/20/solid";
-import CafeteriaCard from "@ui/components/card/Cafeteria";
-import RestaurantCard from "@ui/components/card/Restaurant";
-import Greeting from "@ui/components/home/Greeting";
-import Container from "@ui/layouts/Container";
-import MainLayout from "@ui/layouts/MainLayout";
+import { UserCircleIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
+import { CafeteriaCard, RestaurantCard } from "@ui/components/card";
+import { Greeting } from "@ui/components/home";
+import { MainLayout, Container } from "@ui/layouts";
 import { restaurants } from "@utils/constant/data";
 import { NextPageWithLayout } from "pages/_app";
 import React from "react";
+
 
 const HomePage: NextPageWithLayout = () => {
 	const firstname = "อาตา";

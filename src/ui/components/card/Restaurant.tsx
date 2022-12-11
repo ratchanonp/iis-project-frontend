@@ -1,8 +1,7 @@
 import { Restaurant } from "@utils/interfaces";
 import Image from "next/image";
 import React from "react";
-import Price from "./price/Price";
-import Rating from "./rating/Rating";
+import { Price, Rating } from ".";
 
 interface Props {
 	restaurant: Restaurant;
@@ -43,4 +42,5 @@ const RestaurantCard = (props: Props) => {
 	);
 };
 
-export default RestaurantCard;
+export { RestaurantCard };
+

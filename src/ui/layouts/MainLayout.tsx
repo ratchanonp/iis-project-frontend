@@ -15,4 +15,5 @@ const MainLayout = (props: Props) => {
 	);
 };
 
-export default MainLayout;
+export { MainLayout };
+

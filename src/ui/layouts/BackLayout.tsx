@@ -17,4 +17,5 @@ const BackLayout = (props: Props) => {
 	);
 };
 
-export default BackLayout;
+export { BackLayout };
+

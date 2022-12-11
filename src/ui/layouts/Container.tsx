@@ -9,4 +9,5 @@ const Container = (props: Props) => {
 	return <div className="flex flex-col m-5">{children}</div>;
 };
 
-export default Container;
+export { Container };
+

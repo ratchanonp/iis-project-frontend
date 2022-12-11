@@ -16,7 +16,7 @@ const people: Array<Person> = [
 	{ id: 6, name: "Hellen Schmidt" },
 ];
 
-export default function ComboBoxInput() {
+export function ComboBoxInput() {
 	const { Input, Button, Option, Options } = Combobox;
 
 	const [selected, setSelected] = useState<Person>(people[0]);
