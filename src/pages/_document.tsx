@@ -16,8 +16,8 @@ export default function Document() {
 
 					<p className="mt-10 text-2xl leading-10">มาเรียนที่<span className="underline decoration-primary decoration-wavy mx-2">จุฬา</span>แล้วไม่รู้<span className="underline decoration-primary decoration-wavy mx-2">จะกินไรดี</span></p>
 					<p className="text-2xl"><span className="text-primary">จะกินไฬดี</span> ช่วยได้</p>
-					
-					<QRCode value={""} size={200} className="mt-20"/>
+
+					<QRCode value={"https://iis-project-frontend.vercel.app/"} size={200} className="mt-20" />
 				</div>
 			</body>
 		</Html>
