@@ -16,8 +16,8 @@ const HomePage: NextPageWithLayout = () => {
 			</div>
 			<div className="flex items-center justify-between mt-20">
 				<div className="flex flex-col">
-					<span className="text-2xl font-Kanit font-medium">โรงอาหาร</span>
-					<span className="text-md font-Kanit font-medium text-primary leading-none">
+					<span className="text-4xl font-Kanit font-medium">โรงอาหาร</span>
+					<span className="text-xl font-Kanit font-medium text-primary leading-none">
 						Cafeteria
 					</span>
 				</div>
@@ -31,8 +31,8 @@ const HomePage: NextPageWithLayout = () => {
 			</div>
 			<div className="flex items-center justify-between mt-10">
 				<div className="flex flex-col">
-					<span className="text-2xl font-Kanit font-medium">ร้านอาหาร</span>
-					<span className="text-md font-Kanit font-medium text-primary leading-none">
+					<span className="text-4xl font-Kanit font-medium">ร้านอาหาร</span>
+					<span className="text-xl font-Kanit font-medium text-primary leading-none">
 						Restaurant
 					</span>
 				</div>

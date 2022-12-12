@@ -1,4 +1,5 @@
-import { Restaurant } from "@utils/interfaces/Restaurant";
+import { Review } from "@utils/interfaces";
+import { Restaurant } from "@utils/interfaces/Restaurant.interface";
 
 const faculty: string[] = [
 	"คณะวิศวกรรมศาสตร์",
@@ -86,4 +87,12 @@ const restaurants: Array<Restaurant> = [
 	},
 ];
 
-export { faculty, restaurants };
+const reviewMock: Review = {
+	restaurant: "ไก่ทอดวิดวะ",
+	cafeteria: "วิทยาศาสตร์",
+	rating: 5.0,
+	comment: "อร่อยมากเลยค่ะ",
+	create_at: "2022-10-10",
+};
+
+export { faculty, restaurants, reviewMock };

@@ -2,7 +2,7 @@ import { CubeIcon, HomeIcon, PencilIcon } from "@heroicons/react/20/solid";
 
 const Navbar = () => {
 	return (
-		<div className="absolute bottom-0 z-20 w-[415px]">
+		<div className="w-[410px]">
 			<nav className="bg-primary py-2 rounded-t-3xl relative">
 				<ul className="grid grid-cols-3 text-white">
 					<li className="flex flex-col w-full items-center text-center">

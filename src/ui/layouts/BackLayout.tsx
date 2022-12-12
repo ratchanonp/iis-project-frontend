@@ -1,4 +1,5 @@
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
+import { useRouter } from "next/router";
 
 interface Props {
 	children: React.ReactNode;
@@ -6,9 +7,10 @@ interface Props {
 
 const BackLayout = (props: Props) => {
 	const { children } = props;
+	const router = useRouter();
 	return (
 		<div>
-			<button className="ml-5 mt-5 bg-gray-300 p-1 rounded-full">
+			<button onClick={() => router.back()} className="ml-5 mt-5 bg-gray-300 p-1 rounded-full">
 				<ChevronLeftIcon className="w-6 h-6 text-white" />
 			</button>
 			{children}

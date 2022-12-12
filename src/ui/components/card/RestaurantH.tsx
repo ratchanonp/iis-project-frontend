@@ -1,4 +1,4 @@
-import { Restaurant } from "@utils/interfaces/Restaurant";
+import { Restaurant } from "@utils/interfaces/Restaurant.interface";
 import Image from "next/image";
 import { Price, Rating } from "./";
 

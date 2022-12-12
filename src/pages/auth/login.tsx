@@ -1,36 +1,80 @@
+import { login } from "@utils/api/auth";
+import { useFormik } from "formik";
+import { useRouter } from "next/router";
+import Swal from "sweetalert2";
+
 export default function LoginPage() {
+
+	const router = useRouter();
+
+	const formik = useFormik({
+		initialValues: {
+			email: "",
+			password: ""
+		},
+		onSubmit: async (values) => {
+			console.log("submit");
+			const { email, password } = values;
+			const isSuccess = await login(email, password);
+
+			console.log(isSuccess);
+
+			Swal.fire({
+				icon: "success",
+			});
+
+			if (isSuccess) {
+				router.push("/home");
+			} else {
+				console.log("error");
+			}
+		}
+	});
+
+
 	return (
-		<div className="flex flex-col p-5 font-Poxppins">
-			<h1 className="pt-10 text-7xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EB4174] to-[#FFE3E]">
-        จะกินไฬดี
+		<div className="flex flex-col items-center p-5 font-Kanit text-center space-y-10 mt-20">
+			<h1 className="text-7xl w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#FFE3E3]">
+				จะกินไฬดี
 			</h1>
-			<h2 className="text-center font-Kanit text-3xl my-10">LOGIN</h2>
-			<input
-				className="px-10 py-5 border rounded-full text-center text-xl font-Kanit"
-				type="email"
-				name=""
-				id=""
-				placeholder="Email address"
-			/>
-			<input
-				className="px-10 py-5 border mt-5 rounded-full text-center text-xl font-Kanit"
-				type="password"
-				name=""
-				id=""
-				placeholder="Password"
-			/>
-			<button className="uppercase mt-10 bg-primary py-5 text-white font-bold rounded-full font-Kanit">
-        login
-			</button>
+			<h2 className="text-center font-Kanit text-3xl font-semibold">LOGIN</h2>
+			<form onSubmit={formik.handleSubmit} className="flex flex-col space-y-3 items-center w-full">
+				<input
+					className="form-input"
+					type="email"
+					name="email"
+					id="email"
+					value={formik.values.email}
+					onChange={formik.handleChange}
+					placeholder="Email address"
+				/>
+				{formik.errors.email ? <div>{formik.errors.email}</div> : null}
 
-			<hr className="my-10" />
+				<input
+					className="form-input"
+					type="password"
+					name="password"
+					id="password"
+					value={formik.values.password}
+					onChange={formik.handleChange}
+					placeholder="Password"
+				/>
+				{formik.errors.password ? <div>{formik.errors.password}</div> : null}
+				<button className="btn-primary" type="submit">
+					login
+				</button>
+			</form>
 
-			<p className="text-center text-primary font-light ">
-        Don’t have an account yet?
-			</p>
-			<button className="uppercase border-primary text-primary py-5 font-bold border rounded-full">
-        register
-			</button>
-		</div>
+			<div className="w-full h-[1px] bg-gradient-to-l from-[#EB4174] to-[#FFE3E3]" />
+
+			<div className="w-full space-y-5">
+				<p className="text-center text-primary font-light ">
+					Don’t have an account yet?
+				</p>
+				<button className="uppercase border-primary text-primary py-5 font-bold border rounded-full w-full text-xl">
+					register
+				</button>
+			</div>
+		</div >
 	);
 }

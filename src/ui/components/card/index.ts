@@ -4,4 +4,5 @@ export * from "./price";
 export * from "./rating";
 export * from "./Restaurant";
 export * from "./RestaurantH";
+export * from "./ReviewCard";
 

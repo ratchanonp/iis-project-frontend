@@ -11,7 +11,7 @@ export default function WelcomePage() {
 					ยังสามารถคุณสามารถรีวิวร้านอาหารได้เองอีกด้วย
 				</p>
 				<a
-					href=""
+					href="auth/login"
 					className="bg-primary px-20 py-2 rounded-full text-2xl uppercase"
 				>Get Start
 				</a>

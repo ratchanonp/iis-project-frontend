@@ -1,6 +1,8 @@
+import { BackLayout } from "@ui/layouts";
 import { faculty } from "@utils/constant/data";
-
-export default function RegisterPage() {
+import { NextPageWithLayout } from "pages/_app";
+import { ReactElement } from "react";
+const RegisterPage:NextPageWithLayout = () => {
 	return (
 		<div className="flex flex-col mx-5 font-Poppins">
 			<h1 className="text-6xl text-center font-bold uppercase mt-20">
@@ -31,4 +33,10 @@ export default function RegisterPage() {
 			</form>
 		</div>
 	);
-}
+};
+
+RegisterPage.getLayout = (page: ReactElement) => (
+	<BackLayout>{page}</BackLayout>
+);
+
+export default RegisterPage;
