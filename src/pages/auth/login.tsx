@@ -16,8 +16,6 @@ export default function LoginPage() {
 			const { email, password } = values;
 			const isSuccess = await login(email, password);
 
-			console.log(isSuccess);
-
 			if (isSuccess) {
 				router.push("/home");
 			} else {
