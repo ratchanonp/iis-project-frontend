@@ -7,8 +7,8 @@ interface Props {
 const MainLayout = (props: Props) => {
 	const { children } = props;
 	return (
-		<div className="static">
-			<div className="absolute bottom-0 transform ">
+		<div className="md:relative">
+			<div className="fixed z-20 bottom-0 transform md:absolute md:-bottom-14">
 				<Navbar />
 			</div>
 			{children}
