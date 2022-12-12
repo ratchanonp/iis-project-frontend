@@ -14,6 +14,6 @@ const login = async (username: string, password: string): Promise<boolean> => {
 };
 
 export {
-    login,
+	login,
 };
 

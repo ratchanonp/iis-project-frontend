@@ -1,7 +1,6 @@
 
-type Props = {}
 
-const edit = (props: Props) => {
+const edit = () => {
 	return (
 		<div>edit</div>
 	);

@@ -1,7 +1,6 @@
 import { login } from "@utils/api/auth";
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
-import Swal from "sweetalert2";
 
 export default function LoginPage() {
 
@@ -18,10 +17,6 @@ export default function LoginPage() {
 			const isSuccess = await login(email, password);
 
 			console.log(isSuccess);
-
-			Swal.fire({
-				icon: "success",
-			});
 
 			if (isSuccess) {
 				router.push("/home");
