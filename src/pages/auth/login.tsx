@@ -1,10 +1,13 @@
-import { login } from "@utils/api/auth";
 import { useFormik } from "formik";
+import { ICredential } from "lib/interfaces/Auth.interface";
+import { useLoginMutation } from "lib/redux/services/auth";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function LoginPage() {
 
 	const router = useRouter();
+	const [login, { isLoading }] = useLoginMutation();
 
 	const formik = useFormik({
 		initialValues: {
@@ -14,13 +17,15 @@ export default function LoginPage() {
 		onSubmit: async (values) => {
 			console.log("submit");
 			const { email, password } = values;
-			const isSuccess = await login(email, password);
+			const credential: ICredential = {
+				username: email,
+				password
+			};
 
-			if (isSuccess) {
-				router.push("/home");
-			} else {
-				console.log("error");
-			}
+			console.log(credential);
+
+			await login(credential);
+			console.log("finished");
 		}
 	});
 
@@ -53,8 +58,8 @@ export default function LoginPage() {
 					placeholder="Password"
 				/>
 				{formik.errors.password ? <div>{formik.errors.password}</div> : null}
-				<button className="btn-primary" type="submit">
-					login
+				<button className="btn-primary" type="submit" disabled={isLoading}>
+					{isLoading ? "Loading..." : "Login"}
 				</button>
 			</form>
 
@@ -64,9 +69,9 @@ export default function LoginPage() {
 				<p className="text-center text-primary font-light ">
 					Don’t have an account yet?
 				</p>
-				<button className="uppercase border-primary text-primary py-5 font-bold border rounded-full w-full text-xl">
+				<Link href={"register"} className="flex justify-center uppercase border-primary text-primary py-5 font-bold border rounded-full w-full text-xl mt-10">
 					register
-				</button>
+				</Link>
 			</div>
 		</div >
 	);

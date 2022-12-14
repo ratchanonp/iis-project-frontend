@@ -1,13 +1,21 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { RestaurantHCard } from "@ui/components/card";
-import { Filter } from "@ui/components/search";
 import { BackLayout, Container } from "@ui/layouts";
-import { restaurants } from "@utils/constant/data";
+import { getRestaurants } from "lib/api/restaurant";
 import { NextPageWithLayout } from "pages/_app";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import { useQuery } from "react-query";
 
 
 const RestaurantList: NextPageWithLayout = () => {
+
+	const [search, setSearch] = useState<string>("");
+
+	const restaurants = useQuery("restaurant", getRestaurants);
+
+	if (restaurants.isLoading) return <div>Loading...</div>;
+	if (restaurants.error) return <div>Error</div>;
+
 	return (
 		<>
 			<h1 className="font-Kanit font-bold text-5xl">ร้านอาหาร</h1>
@@ -18,15 +26,18 @@ const RestaurantList: NextPageWithLayout = () => {
 					<input
 						className="search pl-2"
 						type="text"
-						name=""
-						id=""
+						name="search"
+						id="search"
+						value={search}
+						onChange={(e) => setSearch(e.target.value)}
 						placeholder="ค้นหาร้านอาหาร"
 					/>
 				</label>
 			</div>
-			<Filter />
 			<div className="flex flex-col space-y-3 mt-5 overflow-y-scroll h-full">
-				{restaurants.map((restaurant, idx) => (
+				{restaurants.data?.filter(
+					(restaurant) => restaurant.title.toLowerCase().includes(search.toLowerCase()) || restaurant.Cafeteria.title.includes(search.toLowerCase())
+				).map((restaurant, idx) => (
 					<RestaurantHCard key={idx} restaurant={restaurant} />
 				))}
 			</div>

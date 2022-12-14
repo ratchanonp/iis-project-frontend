@@ -1,5 +1,5 @@
-import { Review } from "@utils/interfaces";
-import { Restaurant } from "@utils/interfaces/Restaurant.interface";
+import { Review } from "lib/utils/interfaces";
+import { Restaurant } from "lib/utils/interfaces/Restaurant.interface";
 
 const faculty: string[] = [
 	"คณะวิศวกรรมศาสตร์",

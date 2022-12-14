@@ -1,23 +1,41 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { InfoCard, RestaurantCard, RestaurantHCard } from "@ui/components/card";
-import { Filter } from "@ui/components/search";
 import { BackLayout, Container } from "@ui/layouts";
-import { restaurants } from "@utils/constant/data";
+import { getCafeteriaId } from "lib/api/cafeteria";
+import { useRouter } from "next/router";
 import { NextPageWithLayout } from "pages/_app";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import { useQuery } from "react-query";
 
 const CafeteriaInfoPage: NextPageWithLayout = () => {
+
+	const router = useRouter();
+	const { id } = router.query;
+
+	const [search, setSearch] = useState<string>("");
+
+	const cafeteria = useQuery("cafeteria_single", () => {
+		return getCafeteriaId(id as string);
+	});
+
+	if (cafeteria.isLoading) return <div>Loading...</div>;
+	if (cafeteria.error) return <div>Error</div>;
+
+	console.log(cafeteria.data?.restaurant);
+
+
 	return (
 		<div>
-			<h1 className="font-semibold font-Kanit text-7xl">วิศวกรรม ศาสตร์</h1>
+			<h1 className="font-semibold font-Kanit text-7xl truncate leading-tight">{cafeteria.data?.title}</h1>
 			<h2 className="font-semibold font-Kanit text-primary text-2xl">
-				Engineering Cafeteria
+				{cafeteria.data?.eng_title}
 			</h2>
-			<InfoCard />
+			<InfoCard openPeriod="" rating={5} map={cafeteria.data?.map || ""} />
 
 			<div className="mt-5">
 				<h3 className="font-Kanit text-2xl">ยอดนิยม</h3>
-				<RestaurantHCard restaurant={restaurants[0]} />
+				{cafeteria.data?.restaurant && cafeteria.data?.restaurant.length > 0 && (
+					<RestaurantHCard restaurant={cafeteria.data?.restaurant[0]} />)}
 			</div>
 
 			<div>
@@ -27,17 +45,21 @@ const CafeteriaInfoPage: NextPageWithLayout = () => {
 						<input
 							className="search pl-2"
 							type="text"
-							name=""
-							id=""
+							name="search"
+							id="search"
+							value={search}
+							onChange={(e) => setSearch(e.target.value)}
 							placeholder="ค้นหาร้านอาหาร"
 						/>
 					</label>
 				</div>
-				<Filter />
+				{/*<Filter /> */}
 			</div>
 
 			<div className="grid grid-cols-2 mt-5 gap-4">
-				{restaurants.map((restaurant, idx) => (
+				{cafeteria.data?.restaurant && cafeteria.data?.restaurant.filter(
+					(restaurant) => restaurant.title.includes(search)
+				).map((restaurant, idx) => (
 					<RestaurantCard
 						className="w-full"
 						key={idx}

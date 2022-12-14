@@ -1,12 +1,12 @@
 import { BackLayout } from "@ui/layouts";
-import { faculty } from "@utils/constant/data";
+import { faculty } from "lib/constant/data";
 import { NextPageWithLayout } from "pages/_app";
 import { ReactElement } from "react";
-const RegisterPage:NextPageWithLayout = () => {
+const RegisterPage: NextPageWithLayout = () => {
 	return (
 		<div className="flex flex-col mx-5 font-Poppins">
 			<h1 className="text-6xl text-center font-bold uppercase mt-20">
-        Register
+				Register
 			</h1>
 			<form action="" className="flex flex-col space-y-5 mt-20">
 				<input
@@ -18,7 +18,7 @@ const RegisterPage:NextPageWithLayout = () => {
 				<input className="form-input" type="text" placeholder="Lastname" />
 				<select className="form-input" name="" id="" defaultValue="none">
 					<option value="none" disabled>
-            ------- Faculty ------
+						------- Faculty ------
 					</option>
 					{faculty.map((faculty, idx) => (
 						<option key={idx} value={faculty}>
@@ -28,7 +28,7 @@ const RegisterPage:NextPageWithLayout = () => {
 				</select>
 				<input className="form-input" type="password" name="" id="" />
 				<button type="submit" className="btn-primary">
-          Register
+					Register
 				</button>
 			</form>
 		</div>

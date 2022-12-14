@@ -1,5 +1,5 @@
-import { Restaurant } from "@utils/interfaces";
-import Image from "next/image";
+import { Restaurant } from "lib/utils/interfaces";
+import Link from "next/link";
 import { Price, Rating } from ".";
 
 interface Props {
@@ -9,18 +9,19 @@ interface Props {
 
 const RestaurantCard = (props: Props) => {
 	const { className, restaurant } = props;
-	const { title, category, imageUrl } = restaurant;
+	const { title, category, imageUrl, id } = restaurant;
 
 	return (
-		<div
+		<Link
+			href={`/restaurant/${id}`}
 			className={`shadow-md shrink-0 rounded-xl font-Kanit overflow-hidden ${className}`}
 		>
 			<div className="w-full h-32 relative">
-				<Image src={imageUrl} alt={title} fill={true} />
+				<img src={imageUrl} alt={title} className="w-full h-32" />
 			</div>
 			<div className="p-4">
 				<h1>{title}</h1>
-				<div className="flex space-x-1">
+				<div className="flex space-x-1 items-center mt-1">
 					<Rating score={5} />
 					<Price
 						price={{
@@ -29,15 +30,8 @@ const RestaurantCard = (props: Props) => {
 						}}
 					/>
 				</div>
-				<div className="flex space-x-1">
-					{category.map((item) => (
-						<span className="text-xs text-gray-300" key={item}>
-							{item}
-						</span>
-					))}
-				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

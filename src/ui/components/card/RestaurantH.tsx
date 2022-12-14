@@ -1,5 +1,5 @@
-import { Restaurant } from "@utils/interfaces/Restaurant.interface";
-import Image from "next/image";
+import { Restaurant } from "lib/utils/interfaces/Restaurant.interface";
+import Link from "next/link";
 import { Price, Rating } from "./";
 
 interface Props {
@@ -7,22 +7,21 @@ interface Props {
 }
 
 const RestaurantHCard = (props: Props) => {
-	const { title, category, imageUrl } = props.restaurant;
+	const { title, category, imageUrl, Cafeteria, id } = props.restaurant;
 
 	return (
-		<div className="flex font-Kanit rounded-xl overflow-hidden shadow shrink-0">
+		<Link href={`/restaurant/${id}`} className="flex font-Kanit rounded-xl overflow-hidden shadow shrink-0">
 			<div className="relative w-1/3">
-				<Image
+				<img
 					src={imageUrl}
 					alt={title}
-					fill={true}
-					className=" object-fill"
+					className=" object-fill w-full h-24"
 				/>
 			</div>
 			<div className="flex flex-col px-5 py-2.5 h-full">
 				<h3 className="text-lg leading-0">{title}</h3>
 				<span className="text-xs text-primary font-light -mt-1">
-					อักษรศาสตร์
+					{Cafeteria.title}
 				</span>
 				<div className="space-x-1">
 					<Rating score={4.5} />
@@ -34,14 +33,10 @@ const RestaurantHCard = (props: Props) => {
 					/>
 				</div>
 				<div className="flex space-x-2">
-					{category.map((item) => (
-						<span className="text-xs font-light text-gray-300" key={item}>
-							{item}
-						</span>
-					))}
+
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

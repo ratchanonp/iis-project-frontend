@@ -1,20 +1,16 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { CafeteriaCard } from "@ui/components/card";
-import { Filter } from "@ui/components/search";
 import { BackLayout, Container } from "@ui/layouts";
+import { getCafeteria } from "lib/api/cafeteria";
+import { Cafeteria } from "lib/utils/interfaces/Cafeteria.interface";
 import { NextPageWithLayout } from "pages/_app";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import { useQuery } from "react-query";
 
 
 const CafeteriaPage: NextPageWithLayout = () => {
-	const cafeteriaList = [
-		"โรงอาหาร 1",
-		"โรงอาหาร 2",
-		"โรงอาหาร 3",
-		"โรงอาหาร 4",
-		"โรงอาหาร 5",
-		"โรงอาหาร 6",
-	];
+	const cafeteria = useQuery("cafeteria", getCafeteria);
+	const [search, setSearch] = useState<string>("");
 
 	return (
 		<div>
@@ -26,16 +22,20 @@ const CafeteriaPage: NextPageWithLayout = () => {
 					<input
 						className="search pl-2"
 						type="text"
-						name=""
-						id=""
+						name="search"
+						id="search"
+						value={search}
+						onChange={(e) => setSearch(e.target.value)}
 						placeholder="ค้นหาโรงอาหาร"
 					/>
 				</label>
 			</div>
-			<Filter />
 			<div className="grid grid-cols-2 gap-3 mt-5">
-				{cafeteriaList.map((cafeteria, idx) => {
-					return <CafeteriaCard key={idx} title={cafeteria} />;
+				{cafeteria.data?.filter(
+					(cafeteria: Cafeteria) =>
+						cafeteria.title.toLowerCase().includes(search.toLowerCase())
+				).map((cafeteria: Cafeteria, idx: number) => {
+					return <CafeteriaCard key={idx} cafeteria={cafeteria} />;
 				})}
 			</div>
 		</div>
