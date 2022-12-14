@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        ".next": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true
+    },
+    "eslint.validate": [
+        "javascript"
+    ]
+}
